@@ -38,6 +38,18 @@ export async function getItems() {
     return checkError(response);
 }
 
+//find and update (set complete to true), the item that matches the correct id
+export async function buyItem(item) {
+    const response = await client
+        .from('shopping_lists')
+        .update({ complete: true })
+        
+        //if (as above) your key name is the same as the variable name pointing to the value, you can rewrite it like so
+        .match({ user_id: client.auth.user().id, id: item });
+
+    return checkError(response);
+}
+
 export function getUser() {
     return client.auth.session() && client.auth.session().user;
 }
