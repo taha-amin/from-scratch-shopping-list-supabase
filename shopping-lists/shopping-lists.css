@@ -38,6 +38,7 @@
 .complete {
     text-decoration: line-through;
     background-color: lightgreen;
+    cursor: no-drop;
 }
 
 .delete-button {
