@@ -52,7 +52,7 @@ async function fetchAndDisplayList() {
             fetchAndDisplayList();
         });
 
-        shoppingListEl.append(shoppingListEl);
+        shoppingListsEl.append(shoppingListEl);
     }
 }
 
