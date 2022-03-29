@@ -28,6 +28,16 @@ export async function deleteAllItems() {
     return checkError(response);
 }
 
+//get all shopping lists for this user from supabase
+export async function getItems() {
+    const response = await client
+        .from('shopping_lists')
+        .select('*')
+        .match({ user_id: client.auth.user().id });
+
+    return checkError(response);
+}
+
 export function getUser() {
     return client.auth.session() && client.auth.session().user;
 }
