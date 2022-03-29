@@ -13,7 +13,19 @@ export async function createItem(item) {
             user_id: client.auth.user().id
         });
 
-    return response.body;
+    return checkError(response);
+}
+
+//delete all for this user in supabase
+export async function deleteAllItems() {
+    const response = await client
+        .from('shopping_lists')
+
+        //delete all items that belong to this user
+        .delete()
+        .match({ user_id: client.auth.user().id });
+
+    return checkError(response);
 }
 
 export function getUser() {
@@ -50,6 +62,6 @@ export async function logout() {
     return (window.location.href = '../');
 }
 
-// function checkError({ data, error }) {
-//     return error ? console.error(error) : data;
-// }
+function checkError({ data, error }) {
+    return error ? console.error(error) : data;
+}
