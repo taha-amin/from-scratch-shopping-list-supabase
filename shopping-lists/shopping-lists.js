@@ -71,4 +71,4 @@ deleteButton.addEventListener('click', async () => {
 
     //refetch and display the updated list of todos
     await fetchAndDisplayList();
-})
+});
