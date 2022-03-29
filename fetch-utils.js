@@ -3,6 +3,19 @@ const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZ
 
 const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
+//create a single incomplete todo with the correct property for this user in supabase
+export async function createItem(item) {
+    const response = await client
+        .from('shopping_lists')
+        .insert({
+            todo: item,
+            complete: false,
+            user_id: client.auth.user().id
+        });
+
+    return response.body;
+}
+
 export function getUser() {
     return client.auth.session() && client.auth.session().user;
 }
