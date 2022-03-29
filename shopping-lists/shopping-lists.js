@@ -41,13 +41,13 @@ async function fetchAndDisplayList() {
     shoppingListsEl.textContent = '';
 
     //display the list of shopping items
-    for (let shoppingList of shoppingLists) {
-        const shoppingListEl = renderItem(shoppingList);
+    for (let list of shoppingLists) {
+        const shoppingListEl = renderItem(list);
 
         //be sure to give each item an event listener
         //on click, complete that todo
         shoppingListEl.addEventListener('click', async () => {
-            await buyItem(shoppingList.id);
+            await buyItem(list.id);
 
             fetchAndDisplayList();
         });

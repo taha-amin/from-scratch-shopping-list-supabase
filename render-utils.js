@@ -10,11 +10,11 @@ export function renderItem(item) {
     div.classList.add('item');
 
     //put the shopping lists text into the p tag
-    p.textContent = item.item;
+    p.textContent = item.todo;
 
     //append stuff
     div.append(p);
-
+    
     //return the div
     return div;
 }
