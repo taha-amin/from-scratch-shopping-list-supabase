@@ -1,3 +1,4 @@
+//import necessary files from respective files
 import {
     checkAuth,
     createItem,
@@ -9,6 +10,8 @@ import {
 import { renderItem } from '../render-utils.js';
 
 checkAuth();
+
+const shoppingListsEl = document.querySelector('')
 
 const logoutButton = document.getElementById('logout');
 
