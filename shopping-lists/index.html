@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="../styles/reset.css">
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/home.css">
+    <link rel="stylesheet" href="./shopping-lists.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+
     <title>Document</title>
 </head>
 
@@ -19,14 +22,20 @@
             <img src="../assets/big-logo.png" />
         </div>
     </header>    
-    <button id="logout">Logout</button>
-    <main>
-        <h1>You are logged in!</h1>
+    <main class="shopping-lists-main">
+        <button id="logout">Logout</button>
+        <form class="shopping-list-form">
+            <input type="number" name="amount">
+            <input name="shopping-list" required />
+            <button>Add item</button>
+        </form>
+        <button class="delete-button">Delete all items?</button>
+        <div class="shopping-lists"></div>
     </main>
     <footer>
         <div class="copy gutter-right">&copy; 2021 Alchemy Code Lab</div>
     </footer>
-    <script type="module" src="./other-page.js"></script>
+    <script type="module" src="./shopping-lists.js"></script>
 </body>
 
 </html>
