@@ -46,3 +46,8 @@
     margin: 20px;
     font-size: 1.3rem;
 }
+
+.item {
+    display: flex;
+    flex-direction: row;
+}

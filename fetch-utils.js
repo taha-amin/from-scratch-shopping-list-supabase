@@ -8,8 +8,9 @@ export async function createItem(item) {
     const response = await client
         .from('shopping_lists')
         .insert({
-            todo: item,
+            todo: item.todo,
             complete: false,
+            amount: item.amount,
             user_id: client.auth.user().id
         });
 

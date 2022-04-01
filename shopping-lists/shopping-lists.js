@@ -24,9 +24,13 @@ shoppingListForm.addEventListener('submit', async (e) => {
 
     //on submit, create a shopping list, reset the form, and display the shopping list
     const shoppingList = data.get('shopping-list');
+    const shoppingAmount = data.get('amount');
 
-    //call our createToDo function
-    await createItem(shoppingList);
+    //call our createItem function
+    await createItem({
+        todo: shoppingList,
+        amount: shoppingAmount,
+    });
 
     shoppingListForm.reset();
 
